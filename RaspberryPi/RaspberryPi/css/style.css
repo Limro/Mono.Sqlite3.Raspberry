@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, Sans-serif;
+  /*The background image will repeat it self infite without a border*/
+  background:url('../img/bg.jpg');
+  background-attachment: fixed;
+  font-size: 0.8em;
+  color:#333;
+}
+
+table {
+	text-align: left;
+}
+
+header {
+	padding: 0px 20px;
+}
+
+/*All the products*/
+.content {
+	text-align: center;
+}
+
+/*The body*/
+.container {
+	width: 500px;
+	background: #FFF;
+	margin: auto;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+footer {
+	background: #666;
+	text-align: center;
+	color: #FFF;
+	padding: 10px;
+}
+
+/* NAVIGATION */
+
+nav {
+	background: #666;
+	text-align: center;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 20px;
+}
+
+nav ul li a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	color:#FFD56F;
+}
+
+section.content {
+	padding: 20px 50px;
+}
+
+/* PRODUCT */
+
+.products tr td {
+	padding: 20px 0px ;
+}
+
+.product-image {
+	margin-right: 20px;
+}
+
+.product-title {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.product-description {
+	color: #999;
+}
+
+.product-price {
+	color: #B39448;
+	margin-bottom: 20px;
+}
+
+.product-buy {
+	border: 1px solid #999;
+	padding: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #999;
+}
+
+.product-buy:hover {
+	background: #B39448;
+	color: #FFF;
+	border-color: #FFF;
+}
