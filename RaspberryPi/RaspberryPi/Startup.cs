@@ -6,6 +6,8 @@ using Microsoft.Owin;
 using Microsoft.Owin.Hosting;
 using Owin;
 using Mono.Data.Sqlite;
+using Nancy;
+
 
 [assembly: OwinStartup(typeof(RaspberryPi.Startup))]
 namespace RaspberryPi
@@ -15,24 +17,25 @@ namespace RaspberryPi
 		public void Configuration(IAppBuilder app)
 		{
 			app.UseFileServer(enableDirectoryBrowsing: true);
-			//app.UseWelcomePage(new Microsoft.Owin.Diagnostics.WelcomePageOptions()
-			//{
-			//	Path = new PathString("/welcome")
-			//});
 
-			app.Run(context =>
-			{
-				context.Response.ContentType = "text/html";
+			app.UseNancy();
+		}
+	}
 
-				//string output = string.Format(
-				//		"I'm running on {0} nFrom assembly {1}",
-				//		Environment.OSVersion,
-				//		System.Reflection.Assembly.GetEntryAssembly().FullName
-				//		);
+	public class HomeModule : NancyModule
+	{
+		public HomeModule() : base("/api")
+		{
+			Get["/",true] = GetPage;
+		}
+		public async Task<object> GetPage(dynamic a, System.Threading.CancellationToken b)
+		{
+			AccessDatabase();
+			return null;
+		}
 
-				return context.Response.WriteAsync(LoadPage());
-			});
-
+		public void AccessDatabase()
+		{
 			string db = "MyDatabase.sqlite";
 
 			//Varify file exists
@@ -53,12 +56,13 @@ namespace RaspberryPi
 
 			//Insert data
 			//InsertData(dbcon);
-			
+
 			//Retrieve data
 			//GetData(dbcon);
 
 			dbcon.Clone();
 		}
+
 
 		void InsertTable(SqliteConnection dbcon)
 		{
@@ -90,24 +94,6 @@ namespace RaspberryPi
 
 			while (reader.Read())
 				Console.WriteLine("Name: " + reader["name"] + "\tScore: " + reader["score"]);
-		}
-
-		string LoadPage()
-		{
-			//var css = File.ReadAllText("css\\style.css");
-			var index = File.ReadAllText("index.html");
-			//var split = "<!--Split here-->";
-
-			//if(index.Contains(index))
-			//{
-			//	var start = index.IndexOf(split, 0) + split.Length;
-			//	var part1 = index.Substring(0, start);
-			//	var part2 = index.Substring(start, index.Length-start);
-
-			//	index = part1 + "<style> " + css + "</style>" + part2;
-			//}
-			
-			return index;
 		}
 	}
 }

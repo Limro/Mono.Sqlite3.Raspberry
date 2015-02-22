@@ -1,92 +1,157 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<!-- Header -->
+<head>
+	<meta charset="utf-8">
+	<!-- Shown when searching for the page -->
+	<meta name="description" content="Webshop som sælger mange fantastiske produkter">
 
-	<!-- Header -->
-	<head>
-		<meta charset="utf-8">
+	<!-- Author of the website -->
+	<meta name="author" content="Lifeshop">
+	<title>Webshop</title>
 
-		<!-- Shown when searching for the page -->
-		<meta name="description" content="Webshop som sælger mange fantastiske produkter">
-		
-		<!-- Author of the website -->
-		<meta name="author" content="Lifeshop">
-		<title>Webshop</title>
-	
-		<!-- Custom styles for this template -->
-		<link href="css/style.css" rel="stylesheet">
-	</head>
+	<!-- Custom styles for this template -->
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/Handler.js"></script>
+</head>
+<!-- Body of the document -->
+<body role="document"
+			onload="myFunction();">
+	<div class="container">
+		<!-- Header with logo -->
+		<header>
+			<img src="img/logo.jpg" alt="Lifestyle shop" />
+		</header>
 
-	<!-- Body of the document -->
-	<body role="document">
+		<!-- Navigation bar -->
+		<nav>
+			<ul>
+				<li>
+					<a href="#">Liste</a>
+				</li>
+				<li>
+					<a href="#">Søg</a>
+				</li>
+			</ul>
+		</nav>
 
-		<div class="container">
+		<!-- Content with products -->
+		<section class="content">
+			<table class="entries">
+				<tr class="head">
+					<th class="entries-date">
+						Købsdato
+					</th>
+					<th class="entries-shop">
+						Butik
+					</th>
+					<th class="entries-list">
+						Liste af filer
+					</th>
+					<th class="entries-uploadButton">
+						Gem fil(er)
+					</th>
+					<th class="entries-DownloadButton">
+						Hent fil(er)
+					</th>
+				</tr>
 
-			<!-- Header with logo -->
-			<header>
-				<img src="img/logo.jpg" alt="Lifestyle shop"/>
-			</header>
-			
-			<!-- Navigation bar -->
-			<nav>
-				<ul>
-					<li>
-						<a href="#">Computer</a>
-					</li>
-					<li>
-						<a href="#">Smartwatch</a>
-					</li>
-					<li>
-						<a href="#">Tablet</a>
-					</li>
-				</ul>
-			</nav>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
 
-			<!-- Content with products -->
-			<section class="content">
-				<H1>Aktuelle tilbud</H1>
+				<tr>
+					<td class="entries-date">
+						<p>21 / 02 - 2015</p>
+					</td>
+					<td class="entries-shop">
+						<p>Butik</p>
+					</td>
+					<td class="entries-list">
+						<ol>
+							<li>this</li>
+							<li>and this</li>
+						</ol>
+					</td>
+					<td class="entries-uploadButton">
+						<p class="entry-button">
+							<label class="add-photo-btn">
+								Upload fil
+								<span>
+									<input type="file" id="myfile" name="myfile" />
+								</span>
+							</label>
+						</p>
+					</td>
 
-				<table class="products">
-					<tr>
-						<td>
-							<img class="product-image" src="img/products/ipad.jpg" alt="Ipad"/>
-						</td>
-						<td>
-							<p class="product-title">Ipad</p>
-							<p class="product-description">Din ven i skyen!</p>
-							<p class="product-price">3800.-</p>
-							<a href="#" class="product-buy">KØB</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<img class="product-image" src="img/products/computer.jpg" alt="Computer"/>
-						</td>
-						<td>
-							<p class="product-title">Computer</p>
-							<p class="product-description">Din ven overalt!</p>
-							<p class="product-price">6800.-</p>
-							<a href="#" class="product-buy">KØB</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<img class="product-image" src="img/products/SmartWatch.jpg" alt="Smartwatch"/>
-						</td>
-						<td>
-							<p class="product-title">Smartwatch</p>
-							<p class="product-description">Din ven på armen!</p>
-							<p class="product-price">3800.-</p>
-							<a href="#" class="product-buy">KØB</a>
-						</td>
-					</tr>
-				</table>
-			</section>
+					<td class="entries-downloadButton">
+						<p class="entry-button">
+							<label class="add-photo-btn">
+								Download fil
+								<span>
+									<input type="file" id="myfile" name="myfile" />
+								</span>
+							</label>
+						</p>
+					</td>
+				</tr>
 
-			
-			<footer>
-				Copyright &copy; Gruppe 1-17	
-			</footer>
-		</div> <!-- /container -->
+			</table>
+			<!--<table class="products">
+				<tr>
+					<td>
+						<img class="product-image" src="img/products/ipad.jpg" alt="Ipad"/>
+					</td>
+					<td>
+						<p class="product-title">Ipad</p>
+						<p class="product-description">Din ven i skyen!</p>
+						<p class="product-price">3800.-</p>
+						<a href="#" class="product-buy">KØB</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img class="product-image" src="img/products/computer.jpg" alt="Computer"/>
+					</td>
+					<td>
+						<p class="product-title">Computer</p>
+						<p class="product-description">Din ven overalt!</p>
+						<p class="product-price">6800.-</p>
+						<a href="#" class="product-buy">KØB</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img class="product-image" src="img/products/SmartWatch.jpg" alt="Smartwatch"/>
+					</td>
+					<td>
+						<p class="product-title">Smartwatch</p>
+						<p class="product-description">Din ven på armen!</p>
+						<p class="product-price">3800.-</p>
+						<a href="#" class="product-buy">KØB</a>
+					</td>
+				</tr>
+			</table>-->
 
-	</body>
+			<p id="demo1">hey</p>
+			<button type="button"
+							onloadstart="document.getElementById('demo1').innerHTML = Date()">
+				Works.
+			</button>
+
+			<button onclick="myFunction()">Works not :(</button>
+			 
+
+
+		</section>
+
+		<footer>
+			Copyright &copy; Gruppe 1-17
+		</footer>
+	</div> <!-- /container -->
+</body>
 </html>
